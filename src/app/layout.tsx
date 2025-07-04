@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'QeinTech - KyraDock A3',
+  title: 'KyraDock A3 - QeinTech',
   description: 'Experience the future with KyraDock A3, your smart companion reimagined.',
 };
 

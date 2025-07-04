@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: #090909;
-  --foreground: #ffffff;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @keyframes blink {
@@ -17,9 +18,20 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: 'Inter', sans-serif;
+}
+
+/* Ensure text is always crisp */
+* {
+  text-rendering: optimizeLegibility;
 }
 
 @layer components {
