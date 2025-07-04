@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-interface CreatorProps {
+interface Creator {
   name: string;
   description: string[];
   imagePath: string;
 }
 
-export default function Creator({ name, description, imagePath }: CreatorProps) {
+export default function Creator({ name, description, imagePath }: Creator) {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">

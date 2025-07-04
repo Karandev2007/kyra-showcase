@@ -8,6 +8,24 @@
   --background-end-rgb: 0, 0, 0;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.7);
+}
+
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -29,7 +47,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Ensure text is always crisp */
 * {
   text-rendering: optimizeLegibility;
 }

@@ -22,6 +22,13 @@ export default function Hero() {
     return () => clearInterval(typingInterval);
   }, []);
 
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center">
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,#13151a,#090909)] pointer-events-none">
@@ -44,7 +51,10 @@ export default function Hero() {
           </h1>
 
           <div className="mt-10">
-            <button className="bg-purple-900 hover:bg-purple-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200">
+            <button 
+              onClick={scrollToFeatures}
+              className="bg-purple-900 hover:bg-purple-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 hover:scale-105"
+            >
               Learn More
             </button>
           </div>

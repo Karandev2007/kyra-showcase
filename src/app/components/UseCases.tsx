@@ -1,12 +1,12 @@
 'use client';
 
-interface UseCaseCardProps {
+interface UseCaseCard {
   icon: string;
   command: string;
   color: string;
 }
 
-const UseCaseCard = ({ icon, command, color }: UseCaseCardProps) => (
+const UseCaseCard = ({ icon, command, color }: UseCaseCard) => (
   <div
     className={`flex-shrink-0 ${color} bg-opacity-10 backdrop-blur-sm rounded-xl p-6 border border-white/10 w-80 transition-all duration-300 hover:bg-opacity-20 hover:scale-105`}
   >
