@@ -1,0 +1,57 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
+export default function Hero() {
+  const [displayText, setDisplayText] = useState('');
+  const fullText = 'Built for developers & makers.';
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        setIsTypingComplete(true);
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
+
+  return (
+    <section className="relative min-h-screen flex items-center">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,#13151a,#090909)] pointer-events-none">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/20 to-black/80" />
+        </div>
+      </div>
+
+      {/* hero sec */}
+      <div className="relative max-w-7xl mx-auto px-4 py-32">
+        <div className="max-w-3xl">
+          <h1 className="font-extrabold tracking-tight">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-900 text-4xl sm:text-5xl md:text-6xl mb-3">
+              Meet KyraDock A3
+            </span>
+            <span className="block text-gray-400 text-2xl sm:text-3xl md:text-4xl min-h-[2.5rem]">
+              {displayText}
+              <span className={`inline-block w-0.5 h-6 ml-1 bg-purple-700 ${isTypingComplete ? 'animate-blink' : ''}`} />
+            </span>
+          </h1>
+
+          <div className="mt-10">
+            <button className="bg-purple-900 hover:bg-purple-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-200">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="fixed bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-900/30 to-transparent pointer-events-none" />
+    </section>
+  );
+}
