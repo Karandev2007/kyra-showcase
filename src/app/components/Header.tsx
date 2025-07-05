@@ -10,11 +10,11 @@ export default function Header() {
           <Link href="/" className="text-white hover:text-purple-300 transition-colors duration-200 text-sm font-medium">
             Home
           </Link>
-          <Link href="/addons" className="text-white hover:text-purple-300 transition-colors duration-200 text-sm font-medium">
-            Addons
+          <Link href="#features" className="text-white hover:text-purple-300 transition-colors duration-200 text-sm font-medium">
+            Features
           </Link>
-          <Link href="/faq" className="text-white hover:text-purple-300 transition-colors duration-200 text-sm font-medium">
-            FAQ
+          <Link href="#creator" className="text-white hover:text-purple-300 transition-colors duration-200 text-sm font-medium">
+            Creator
           </Link>
         </div>
       </nav>

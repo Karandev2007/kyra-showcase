@@ -8,7 +8,7 @@ interface Creator {
 
 export default function Creator({ name, description, imagePath }: Creator) {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="creator" className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-white text-center mb-8">Creator</h2>
         <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-2xl p-8 backdrop-blur-sm border border-white/10">

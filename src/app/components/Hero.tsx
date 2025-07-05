@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('');
@@ -30,15 +31,25 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center justify-center">
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,#13151a,#090909)] pointer-events-none">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/20 to-black/80" />
         </div>
       </div>
 
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-30 pointer-events-none">
+        <Image
+          src="/kyra.png"
+          alt="kyra bg"
+          fill
+          className="object-contain transform -rotate-12"
+          priority
+        />
+      </div>
+
       {/* hero sec */}
-      <div className="relative max-w-7xl mx-auto px-4 py-32">
+      <div className="relative max-w-7xl mx-auto px-4 py-32 mt-20">
         <div className="max-w-3xl">
           <h1 className="font-extrabold tracking-tight">
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-900 text-4xl sm:text-5xl md:text-6xl mb-3">
