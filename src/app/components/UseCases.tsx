@@ -67,13 +67,13 @@ export default function UseCases() {
       <div className="space-y-12">
         {useCaseRows.map((row, rowIndex) => (
           <div key={rowIndex} className="relative">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+            <div className="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
+            <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-black via-black/80 to-transparent z-10" />
             
             <div 
-              className="flex gap-6 overflow-hidden hover:pause px-32"
+              className="flex gap-6 overflow-hidden hover:pause px-48"
               style={{
-                animation: `scroll${rowIndex} ${25 + rowIndex * 5}s linear infinite`
+                animation: `scroll${rowIndex} ${30 + rowIndex * 5}s linear infinite`
               }}
             >
               {[...row, ...row, ...row].map((useCase, index) => (
@@ -86,16 +86,16 @@ export default function UseCases() {
 
       <style jsx global>{`
         @keyframes scroll0 {
-          0% { transform: translateX(-10%); }
-          100% { transform: translateX(-23.33%); }
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-33.33%); }
         }
         @keyframes scroll1 {
-          0% { transform: translateX(-23.33%); }
-          100% { transform: translateX(-10%); }
+          0% { transform: translateX(-33.33%); }
+          100% { transform: translateX(0%); }
         }
         @keyframes scroll2 {
-          0% { transform: translateX(-15%); }
-          100% { transform: translateX(-28.33%); }
+          0% { transform: translateX(-16.67%); }
+          100% { transform: translateX(-50%); }
         }
         .hover\:pause:hover {
           animation-play-state: paused;
