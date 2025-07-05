@@ -7,21 +7,33 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState('');
   const fullText = 'Built for developers & makers.';
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setDisplayText(fullText.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        setIsTypingComplete(true);
-        clearInterval(typingInterval);
-      }
-    }, 100);
+    // added delay
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
 
-    return () => clearInterval(typingInterval);
+    return () => clearTimeout(loadingTimeout);
   }, []);
+
+  useEffect(() => {
+    if (!isLoading) {
+      let currentIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (currentIndex <= fullText.length) {
+          setDisplayText(fullText.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          setIsTypingComplete(true);
+          clearInterval(typingInterval);
+        }
+      }, 100);
+
+      return () => clearInterval(typingInterval);
+    }
+  }, [isLoading]);
 
   const scrollToFeatures = () => {
     const featuresSection = document.getElementById('features');
