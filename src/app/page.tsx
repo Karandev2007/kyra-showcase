@@ -5,6 +5,7 @@ import UseCases from './components/UseCases';
 import LoadingScreen from './components/LoadingScreen';
 import TrustedSecure from './components/TrustedSecure';
 import Creator from './components/Creator';
+import Comments from './components/Comments';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
           Layers of security help keep your experience safe and your data secure.
         </p>
       </TrustedSecure>
+      <Comments />
       <Creator 
         name="Karan"
         description={[
